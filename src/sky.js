@@ -56,7 +56,9 @@ function generateHeight(width, height) {
 	var data = new Uint8Array(size); // zero matrix
 	var perlin = new ImprovedNoise();
 	var quality = 1;
-	var z = Math.random() * 100;
+	// var z = Math.random() * 10;
+	// var z = 3.7421847649072038;
+	var z = 3.7421847649072038;
 
 	for (var j = 0; j < 4; j++) {
 		for (var i = 0; i < size; i++) {
@@ -98,9 +100,9 @@ function generateTexture(data, width, height) {
 
 		shade = vector3.dot(sun);
 
-		imageData[i] = (96 + shade * 128) * (0.5 + data[j] * 0.007); // red
-		imageData[i + 1] = (32 + shade * 96) * (0.5 + data[j] * 0.007); // green
-		imageData[i + 2] = shade * 96 * (0.5 + data[j] * 0.007); // blue
+		imageData[i] = (96 + shade * 277.5) * (0.5 + data[j] * 0.007); // red
+		imageData[i + 1] = (32 + shade * 357.5) * (0.5 + data[j] * 0.007); // green
+		imageData[i + 2] = shade * 397.5 * (0.5 + data[j] * 0.007); // blue
 	}
 
 	context.putImageData(image, 0, 0);
